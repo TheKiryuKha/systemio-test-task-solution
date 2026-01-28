@@ -1,0 +1,14 @@
+parameters:
+    paths:
+        - bin/
+        - src/
+        - tests/
+
+    level: max
+
+    excludePaths:
+        analyse:
+            - vendor
+    
+    ignoreErrors:
+        # - '#Property .+::\$id \(int\|null\) is never assigned int so it can be removed from the property type\.$#'
