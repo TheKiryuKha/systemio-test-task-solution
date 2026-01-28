@@ -20,5 +20,11 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    Systemeio\TestForCandidates\PaymentProcessor\PaypalPaymentProcessor:
+        class: Systemeio\TestForCandidates\PaymentProcessor\PaypalPaymentProcessor
+        
+    Systemeio\TestForCandidates\PaymentProcessor\StripePaymentProcessor:
+        class: Systemeio\TestForCandidates\PaymentProcessor\StripePaymentProcessor
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
