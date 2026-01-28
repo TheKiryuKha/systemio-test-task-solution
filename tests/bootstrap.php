@@ -6,7 +6,10 @@ use Symfony\Component\Dotenv\Dotenv;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-(new Dotenv())->bootEnv(dirname(__DIR__) . '/.env');
+// $_SERVER['APP_ENV'] = 'test';
+// $_ENV['APP_ENV'] = 'test';
+
+(new Dotenv())->overload(dirname(__DIR__) . '/.env.test');
 
 if ($_SERVER['APP_DEBUG']) {
     umask(0000);

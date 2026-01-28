@@ -33,13 +33,15 @@ final class TaxRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Tax
-    //    {
-    //        return $this->createQueryBuilder('t')
-    //            ->andWhere('t.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    public function findOneByCountryCode(string $country_code): ?Tax
+    {
+        /** @var ?Tax $tax */
+        $tax = $this->createQueryBuilder('t')
+            ->andWhere('t.country_code = :val')
+            ->setParameter('val', $country_code)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        return $tax;
+    }
 }

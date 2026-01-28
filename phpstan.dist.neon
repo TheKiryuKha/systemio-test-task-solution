@@ -2,7 +2,6 @@ parameters:
     paths:
         - bin/
         - src/
-        - tests/
 
     level: max
 

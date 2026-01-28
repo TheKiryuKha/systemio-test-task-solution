@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use App\Enums\CouponType;
+use App\Enum\CouponType;
 use App\Repository\CouponRepository;
 use Doctrine\ORM\Mapping as ORM;
 

@@ -7,7 +7,7 @@ namespace App\DataFixtures;
 use App\Entity\Coupon;
 use App\Entity\Product;
 use App\Entity\Tax;
-use App\Enums\CouponType;
+use App\Enum\CouponType;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -68,9 +68,9 @@ final class AppFixtures extends Fixture
     {
         return [
             // $productData = [$title, $price];
-            ['Iphone', 100],
-            ['Headphones', 20],
-            ['Case', 10],
+            ['Iphone', 10000],
+            ['Headphones', 2000],
+            ['Case', 1000],
         ];
     }
 
@@ -81,7 +81,7 @@ final class AppFixtures extends Fixture
     {
         return [
             //  $couponData = [$type, $value, $code]
-            [CouponType::Fixed, 10, 'D10'],
+            [CouponType::Fixed, 20, 'D20'],
             [CouponType::Discount, 25, 'P25'],
             [CouponType::Discount, 100, 'P100'],
         ];

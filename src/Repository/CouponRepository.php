@@ -33,13 +33,16 @@ final class CouponRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Coupon
-    //    {
-    //        return $this->createQueryBuilder('c')
-    //            ->andWhere('c.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    public function findOneByCode(string $code): ?Coupon
+    {
+        /** @var ?Coupon */
+        $coupon = $this->createQueryBuilder('c')
+            ->andWhere('c.code = :val')
+            ->setParameter('val', $code)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+
+        return $coupon;
+    }
 }
