@@ -48,6 +48,7 @@ final class CalculatePriceController extends AbstractController
 
         return $this->json([
             'totalPrice' => $price,
+            'currency' => 'EUR'
         ]);
     }
 }
