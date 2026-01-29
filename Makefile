@@ -37,10 +37,21 @@ install: ## Install dependencies without running the whole application.
 
 success-message:
 	@echo "You can now access the application at http://localhost:8337"
-	@echo "Good luck! 🚀"
+	@echo "To run tests type make test"
+	@echo "Thanks for the nice message! Good luck with the verification 🚀"
 
 test: ## Run all tests
 	${DC_RUN} composer test
 
 fix: ## Run all linters
 	${DC_RUN} composer fix
+
+init-dev: down build up install migrate seed success-message console # 
+
+migrate: ## run migrations for databases
+	${DC_RUN} php bin/console doctrine:migrations:migrate --no-interaction
+	${DC_RUN} php bin/console doctrine:migrations:migrate --env=test --no-interaction
+	
+seed: ## run fixtures for databases
+	${DC_RUN} php bin/console doctrine:fixtures:load --no-interaction
+	${DC_RUN} php bin/console doctrine:fixtures:load --env=test --no-interaction
