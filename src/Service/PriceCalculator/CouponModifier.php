@@ -15,7 +15,7 @@ final readonly class CouponModifier implements ModifierInterface
     }
 
     /**
-     * @todo refactor
+     * @todo refactor to Money value object
      */
     public function modify(PriceCalculator $calculator): void
     {

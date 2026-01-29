@@ -4,10 +4,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "product": 1,
-  "taxNumber": "DE123456789",
-  "couponCode": "D15"
-}
+  "product" => 1,
+  "couponCode" => "D20",
+  "taxNumber" => "IT12345678901",
+};
 
 ### Execute Purchase
 POST http://127.0.0.1:8337/purchase
@@ -15,8 +15,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "product": 1,
-  "taxNumber": "IT12345678900",
-  "couponCode": "D15",
-  "paymentProcessor": "paypal"
-}
+  "product" => 1,
+  "couponCode" => "P25",
+  "taxNumber" => "DE309876543",
+  "paymentProcessor" => "paypal",
+};
